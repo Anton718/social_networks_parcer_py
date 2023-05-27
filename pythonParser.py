@@ -2,7 +2,6 @@ import urllib.request
 import sqlite3
 import re
 
-
 conn = sqlite3.connect('urls.db')
 cur = conn.cursor()
 cur.execute('delete from urls')
@@ -12,7 +11,7 @@ conn.close()
 try:
     print('start')
 
-    web = 'https://www.cnn.com'
+    web = 'https://captainbills.com/'
 
     def my_function(item):
         get_url = urllib.request.urlopen(item)
@@ -29,7 +28,6 @@ try:
 
     my_function(web)
     
-   
     conn = sqlite3.connect('urls.db')
     curs = conn.cursor()
     links = curs.execute('select url from urls').fetchall()
@@ -62,7 +60,7 @@ try:
                 print(i)
             elif 'whatsapp' in i:
                 print(i)
-            elif 'reddit' in i:
+            elif 'tiktok' in i:
                 print(i)
 
 except:
