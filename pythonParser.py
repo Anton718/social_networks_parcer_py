@@ -2,6 +2,7 @@ import urllib.request
 import sqlite3
 import re
 
+# clear database from previous search
 conn = sqlite3.connect('urls.db')
 cur = conn.cursor()
 cur.execute('delete from urls')
