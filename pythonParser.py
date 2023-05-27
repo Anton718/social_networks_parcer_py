@@ -1,14 +1,15 @@
 import urllib.request
 import sqlite3
 import re
+import dbCleaner
+import searchMedia
 
-with open('dbCleaner.py', 'r') as file2:
-    exec(file2.read())
+dbCleaner.dbCleaner()
 
 try:
     print('start')
 
-    web = 'https://www.foxnews.com/'
+    web = 'https://www.avtosushi.ru'
 
     def my_function(item):
         get_url = urllib.request.urlopen(item)
@@ -25,8 +26,7 @@ try:
 
     my_function(web)
     
-    with open('searchMedia.py', 'r') as file:
-        exec(file.read())
+    searchMedia.searchLinks()
 
 except:
     print('some problem')
